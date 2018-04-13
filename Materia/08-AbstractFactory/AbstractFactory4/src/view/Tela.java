@@ -3,6 +3,7 @@ package view;
 import controller.ControleJogo;
 import controller.Observador;
 import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
 
 public class Tela extends javax.swing.JFrame implements Observador{
     
@@ -197,9 +198,6 @@ public class Tela extends javax.swing.JFrame implements Observador{
             s = "c";
         }
         controle.escolher( s );
-        rbGregos.setEnabled( false );
-        rbEgipcios.setEnabled( false );
-        rbChineses.setEnabled( false );
     }//GEN-LAST:event_btEscolherActionPerformed
 
 
@@ -228,8 +226,13 @@ public class Tela extends javax.swing.JFrame implements Observador{
 
     @Override
     public void adicionarFeedBack(String feedBack, int round, double dinheiro) {
-        jTextArea1.setText( jTextArea1.getText() + feedBack);
+        jTextArea1.setText( feedBack + jTextArea1.getText() );
         lbRound.setText( "Round: " + String.valueOf( round ) );
         lbDinheiro.setText( "Dinheiro: $" + String.format("%.2f", dinheiro) );
+    }
+
+    @Override
+    public void mostrarMensagemErro(String mensagem) {
+        JOptionPane.showMessageDialog( this , mensagem );
     }
 }

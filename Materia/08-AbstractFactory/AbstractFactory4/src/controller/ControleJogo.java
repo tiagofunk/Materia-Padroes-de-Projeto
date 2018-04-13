@@ -2,6 +2,7 @@ package controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import model.abstracto.Colhedor;
 import model.abstracto.FabricaTrabalhadores;
 import model.abstracto.Lenhador;
@@ -27,6 +28,10 @@ public class ControleJogo {
         listaObservadores.add(obs);
     }
     
+    public void addRemover(Observador obs) {
+        listaObservadores.remove(obs);
+    }
+    
     private String adicionarPassoSimulacao(){
         String s = "Round " + ++round + "\n";
         
@@ -34,18 +39,21 @@ public class ControleJogo {
         for( Colhedor c : listaColhedores ){
             valor += c.colher();
         }
+        dinheiro += valor;
         s += "Colheu " + String.format("%.2f", valor) + " maçãs.\n";
         
         valor = 0.0;
         for( Lenhador l : listaLenhadores ){
             valor += l.fazerLenha();
         }
+        dinheiro += valor;
         s += "Gerou " + String.format("%.2f", valor) + " lenhas.\n";
         
         valor = 0.0;
         for( Lenhador l : listaLenhadores ){
             valor += l.fazerLenha();
         }
+        dinheiro += valor;
         s += "Minerou " + String.format("%.2f", valor) + " pedras.\n";
         
         s += "\n\n";
@@ -90,12 +98,19 @@ public class ControleJogo {
     }
 
     public void escolher( String s) {
-        if( s.equalsIgnoreCase( "g" ) ){
-            fabrica = new FabricaGrega();
-        } else if( s.equalsIgnoreCase( "e" ) ){
-            fabrica = new FabricaEgipcia();
-        }else if( s.equalsIgnoreCase( "c" ) ){
-            fabrica = new FabricaChinesa();
+        if( !s.isEmpty() ){
+            boolean continuar = false;
+            if (s.equalsIgnoreCase("g")) {
+                fabrica = new FabricaGrega();
+            } else if (s.equalsIgnoreCase("e")) {
+                fabrica = new FabricaEgipcia();
+            } else if (s.equalsIgnoreCase("c")) {
+                fabrica = new FabricaChinesa();
+            }
+        }else{
+            for( Observador obs : listaObservadores ){
+                obs.mostrarMensagemErro( "Escolha um povo para continuar!!" );
+            }
         }
     }
 }
