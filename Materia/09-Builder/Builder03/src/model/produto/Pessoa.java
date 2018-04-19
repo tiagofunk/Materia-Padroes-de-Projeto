@@ -1,4 +1,4 @@
-package produto;
+package model.produto;
 
 public class Pessoa {
 
@@ -33,7 +33,8 @@ public class Pessoa {
 	
 	@Override
 	public String toString() {
-		return nome + " - " + endereco + " - " + telefone + " - " + email;
+		return "Nome: " + nome + "\nEndereço: " + endereco + "\nTelefone: " 
+                        + telefone + "\nEmail: " + email;
 	}
 	
 }
