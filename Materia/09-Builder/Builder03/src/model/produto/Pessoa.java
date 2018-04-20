@@ -33,8 +33,8 @@ public class Pessoa {
 	
 	@Override
 	public String toString() {
-		return "Nome: " + nome + "\nEndereço: " + endereco + "\nTelefone: " 
-                        + telefone + "\nEmail: " + email;
+		return "Nome: " + nome + "\nEndereço: " + endereco
+                        + "\nEmail: " + email + "\nTelefone: " + telefone ;
 	}
 	
 }

@@ -15,15 +15,12 @@ public abstract class Cadastro {
     }
     
     public void construirEndereco( String endereco ){
-        pessoa.setEndereco( endereco );
     }
     
     public void construirEmail( String email ){
-        pessoa.setEmail(email );
     }
     
     public void construirTelefone( String telefone ){
-        pessoa.setTelefone( telefone );
     }
     
     public Pessoa getPessoa(){
