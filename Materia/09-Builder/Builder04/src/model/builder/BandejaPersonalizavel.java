@@ -11,47 +11,23 @@ import model.Suco;
 
 public class BandejaPersonalizavel extends Bandeja {
 
-    public void mudarSanduiche( Sanduiche sanduiche ){
-        if( sanduiche != null ){
-            lanche.setSanduiche( sanduiche );
-        }
-    }
-    
-    public void mudarBatata( Batata batata ){
-        if( batata != null ){
-            lanche.setBatata( batata );
-        }
-    }
-    
-    public void mudarBrinquedo( Brinquedo brinquedo ){
-        if( brinquedo != null ){
-            lanche.setBrinquedo( brinquedo );
-        }
-    }
-    
-    public void mudarBebida( Bebida bebida ){
-        if( bebida != null ){
-            lanche.setBebida( bebida );
-        }
-    }
-    
     @Override
-    public void construirSanduiche() {
-        lanche.setSanduiche( new Hamburger() );
+    public void construirSanduiche( Sanduiche sanduiche ) {
+        lanche.setSanduiche( sanduiche );
     }
 
     @Override
-    public void construirBatata() {
-        lanche.setBatata( new BatataGrande() );
+    public void construirBatata( Batata batata ) {
+        lanche.setBatata( batata );
     }
 
     @Override
-    public void construirBrinquedo() {
-        lanche.setBrinquedo( new Carrinho() );
+    public void construirBrinquedo( Brinquedo brinquedo ) {
+        lanche.setBrinquedo( brinquedo );
     }
 
     @Override
-    public void construirBebida() {
-        lanche.setBebida( new Suco() );
+    public void construirBebida( Bebida bebida ) {
+        lanche.setBebida( bebida );
     }
 }
