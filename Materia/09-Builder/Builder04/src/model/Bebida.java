@@ -1,19 +1,5 @@
 package model;
 
-public class Bebida {
+public interface Bebida {
     
-    private TipoBebida tipo;
-
-    public Bebida(TipoBebida tipo) {
-        this.tipo = tipo;
-    }
-
-    public TipoBebida getTipo() {
-        return tipo;
-    }
-
-    @Override
-    public String toString() {
-        return "Bebida{" + "tipo=" + tipo + '}';
-    }
 }
