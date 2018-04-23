@@ -1,20 +1,21 @@
+
 import builder.Robo;
 import produto.Carro;
 
 public class Montadora {
 
-	private Robo robo;
+    private Robo robo;
 
-	public Montadora(Robo robo) {
-		this.robo = robo;
-	}
-	
-	public void construir() {
-		robo.constroiMotor();
-		robo.constroiPneus();
-	}
+    public Montadora(Robo robo) {
+        this.robo = robo;
+    }
 
-	public Carro getCarro() {
-		return robo.getCarro();
-	}
+    public void construir() {
+        robo.constroiMotor();
+        robo.constroiPneus();
+    }
+
+    public Carro getCarro() {
+        return robo.getCarro();
+    }
 }

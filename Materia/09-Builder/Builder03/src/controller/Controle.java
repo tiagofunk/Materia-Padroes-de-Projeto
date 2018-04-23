@@ -1,42 +1,31 @@
 package controller;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JOptionPane;
-import model.builder.Cadastro;
+import model.builder.Agenda;
 import model.builder.CadastroCompleto;
 import model.builder.CadastroInternet;
 import model.builder.CadastroTelefone;
-import model.produto.Pessoa;
 
 public class Controle {
     
-    private Cadastro cadastro;
+    private Agenda agenda;
 
-    private List< Pessoa > listaPessoas = new ArrayList<>();
-    
     public void cadastrar( String nome, String endereco, String email, String telefone, char opcao ){
         switch (opcao) {
             case 'c':
-                cadastro = new CadastroCompleto();
+                agenda = new Agenda( new CadastroCompleto() );
                 break;
             case 'i':
-                cadastro = new CadastroInternet();
+                agenda = new Agenda( new CadastroInternet() );
                 break;
             case 't':
-                cadastro = new CadastroTelefone();
+                agenda = new Agenda( new CadastroTelefone() );
                 break;
             default:
                 break;
         }
         
-        cadastro.construirNome( nome );
-        cadastro.construirEndereco( endereco );
-        cadastro.construirEmail( email );
-        cadastro.construirTelefone( telefone );
-        
-        listaPessoas.add( cadastro.getPessoa() );
-        
-        JOptionPane.showMessageDialog( null, cadastro.getPessoa().toString() );
+        agenda.construir( nome, endereco, email, telefone );
+        JOptionPane.showMessageDialog( null, agenda.getPessoa().toString() );
     }
 }
