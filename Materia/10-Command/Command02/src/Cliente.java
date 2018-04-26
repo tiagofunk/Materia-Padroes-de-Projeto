@@ -13,9 +13,9 @@ public class Cliente {
     public static void main(String[] args) throws Exception {
 
         CommandInvoker ci = new CommandInvoker();
-        Map<Integer, Class<? extends Command>> comandos = new HashMap<>();
-        comandos.put(1, AdicionarEstoque.class);
-        comandos.put(2, RetirarEstoque.class);
+        Map<Integer, Command> comandos = new HashMap<>();
+        comandos.put(1, new AdicionarEstoque() );
+        comandos.put(2, new RetirarEstoque() );
 
         Scanner s = new Scanner(System.in);
 
@@ -39,8 +39,7 @@ public class Cliente {
                         break;
 
                     default:
-                        Class<? extends Command> commClass = comandos.get(op);
-                        Command comm = commClass.newInstance();
+                        Command comm = comandos.get(op);
 
                         System.out.println("Digite a quantidade");
                         int qtdade = s.nextInt();
