@@ -8,11 +8,16 @@ public class AdicionarEstoque implements Command {
     private int qtdade;
 
     public AdicionarEstoque() {
-        deposito = new Deposito();
+        deposito = Deposito.getDeposito();
     }
     
     public AdicionarEstoque(Deposito deposito) {
         this.deposito = deposito;
+    }
+    
+    @Override
+    public void setDeposito( Deposito d ){
+        this.deposito = d;
     }
 
     @Override

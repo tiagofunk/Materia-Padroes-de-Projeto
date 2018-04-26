@@ -8,11 +8,16 @@ public class RetirarEstoque implements Command{
     private int qtd;
 
     public RetirarEstoque() {
-        deposito = new Deposito();
+        deposito = Deposito.getDeposito();
     }
     
     public RetirarEstoque( Deposito deposito ){
         this.deposito = deposito;
+    }
+    
+    @Override
+    public void setDeposito( Deposito d ){
+        this.deposito = d;
     }
 
     @Override

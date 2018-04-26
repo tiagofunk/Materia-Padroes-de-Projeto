@@ -7,15 +7,12 @@ import command.AdicionarEstoque;
 import command.Command;
 import command.CommandInvoker;
 import command.RetirarEstoque;
-import model.Deposito;
 
 public class Cliente {
 
     public static void main(String[] args) throws Exception {
 
         CommandInvoker ci = new CommandInvoker();
-
-        Deposito d = new Deposito();
         Map<Integer, Class<? extends Command>> comandos = new HashMap<>();
         comandos.put(1, AdicionarEstoque.class);
         comandos.put(2, RetirarEstoque.class);

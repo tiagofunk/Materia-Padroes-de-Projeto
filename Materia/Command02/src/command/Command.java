@@ -1,11 +1,12 @@
 package command;
 
+import model.Deposito;
+
 public interface Command {
-	
-	void execute(int qtdade);
-	
-	void undo();
-	
-	void redo();
+    
+    void setDeposito( Deposito d );
+    void execute(int qtdade);
+    void undo();
+    void redo();
 
 }
