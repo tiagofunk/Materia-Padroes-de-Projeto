@@ -111,13 +111,13 @@ public class CadastroContato extends JFrame{
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 // De acordo com o radiobutton selecionado, criar um builder.
-                char opcao = 'a';
+                String opcao = "";
                 if( jrCompleto.isSelected() ){
-                    opcao = 'c';
+                    opcao = "completo";
                 }else if( jrInternet.isSelected() ){
-                    opcao = 'i';
+                    opcao = "internet";
                 }else if( jrTelefone.isSelected() ){
-                    opcao = 't';
+                    opcao = "telefone";
                 }
                 controle.cadastrar(
                     jtfNome.getText(), jtfEndereco.getText(),
