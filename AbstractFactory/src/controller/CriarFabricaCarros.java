@@ -1,8 +1,9 @@
 package controller;
 
-import factory.concrete.FabricaCarrosFiat;
-import factory.concrete.FabricaCarrosVolks;
+import factory.fiat.FabricaCarrosFiat;
+import factory.ford.FabricaCarrosFord;
 import factory.model.FabricaCarros;
+import factory.volks.FabricaCarrosVolks;
 
 public class CriarFabricaCarros {
 
@@ -17,6 +18,10 @@ public class CriarFabricaCarros {
 
 		case "volks":
 			fc = new FabricaCarrosVolks();
+			break;
+			
+		case "ford":
+			fc = new FabricaCarrosFord();
 			break;
 			
 		default:
