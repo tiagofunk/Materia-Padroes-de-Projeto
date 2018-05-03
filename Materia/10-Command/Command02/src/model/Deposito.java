@@ -2,17 +2,11 @@ package model;
 
 public class Deposito {
     
-    private static Deposito d = new Deposito();
-    
-    public static Deposito getDeposito(){
-        return d;
-    }
-    
-    private Deposito(){
+    private int quantidade;
+     
+    public Deposito(){
         
     }
-
-    private int quantidade;
 
     public void add(int qtdade) {
         this.quantidade += qtdade;

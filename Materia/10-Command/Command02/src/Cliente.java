@@ -7,6 +7,7 @@ import command.AdicionarEstoque;
 import command.Command;
 import command.CommandInvoker;
 import command.RetirarEstoque;
+import model.Deposito;
 
 public class Cliente {
 
@@ -14,16 +15,21 @@ public class Cliente {
 
         CommandInvoker ci = new CommandInvoker();
         Map<Integer, Command> comandos = new HashMap<>();
-        comandos.put(1, new AdicionarEstoque() );
-        comandos.put(2, new RetirarEstoque() );
+        Deposito d = new Deposito();
+        comandos.put(1, new AdicionarEstoque( d ) );
+        comandos.put(2, new RetirarEstoque( d ) );
+        comandos.put(5, new RetirarEstoque( d ) );
 
         Scanner s = new Scanner(System.in);
 
         do {
-            System.out.println("Digite a opcao (1-Adicionar; 2-Remover; 3-Desfazer comando; 4-Refazer comando; 5-Sair)");
+            System.out.println(
+                    "Digite a opcao (1-Adicionar; 2-Remover; 3-Desfazer comando;"+
+                    "4-Refazer comando; 5-Ver quantidade; 6-Sair)"
+            );
 
             int op = s.nextInt();
-            if (op == 5) {
+            if (op == 6) {
                 return;
             }
 
@@ -41,8 +47,7 @@ public class Cliente {
                     default:
                         Command comm = comandos.get(op);
 
-                        System.out.println("Digite a quantidade");
-                        int qtdade = s.nextInt();
+                        
 
                         ci.execute(comm, qtdade);
                 }
