@@ -11,7 +11,7 @@ public class AcmeObjeto implements sistema.CriptografarAdapter{
     }
 
     @Override
-    public String criptografar(String user, String password, String texto) throws Exception {
+    public String criptografar(String texto) throws Exception {
         crip.cripto(texto);
         return crip.getResultadoCriptografia();
     }

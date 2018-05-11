@@ -3,41 +3,42 @@ package sistema;
 public class Executar {
     
     public static void main(String[] args) throws Exception {
-        String user, pass, text;
+        String text;
         CriptografarAdapter ca;
+        Sessao s;
         
-        user = "us1";
-        pass = "us1";
-        text = "abc";
-        /*
-        ca = new AcmeClasse();
-        ca.criptografar( user, pass, text );
+        s = Sessao.getInstance();
+        s.iniciar();
         
-        ca = new AcmeObjeto();
-        ca.criptografar(user, pass, text);
-        */
-        ca = new XptoClasse();
-        ca.criptografar(user, pass, text);
-        /*
-        ca = new XptoObjeto();
-        ca.criptografar(user, pass, text);
-        
-        user = "Admin";
-        pass = "Admin";
-        text = "abc";
+        text = "texto";
         
         ca = new AcmeClasse();
-        ca.criptografar( user, pass, text );
+        System.out.println( ca.criptografar( text ) );
         
         ca = new AcmeObjeto();
-        ca.criptografar(user, pass, text);
+        System.out.println( ca.criptografar( text ) );
         
         ca = new XptoClasse();
-        ca.criptografar(user, pass, text);
+        System.out.println( ca.criptografar( text ) );
         
         ca = new XptoObjeto();
-        ca.criptografar(user, pass, text);
-        */
+        System.out.println( ca.criptografar( text ) );
+        
+        s.iniciar();
+        text = "abc";
+        
+        ca = new AcmeClasse();
+        System.out.println( ca.criptografar( text ) );
+        
+        ca = new AcmeObjeto();
+        System.out.println( ca.criptografar( text ) );
+        
+        ca = new XptoClasse();
+        System.out.println( ca.criptografar( text ) );
+        
+        ca = new XptoObjeto();
+        System.out.println( ca.criptografar( text ) );
+        
         
     }
 }
