@@ -6,8 +6,8 @@ public class LogObjeto implements MostradorTexto{
     
     private logconsole.LogConsole adapter;
 
-    public LogObjeto(LogConsole adapter) {
-        this.adapter = adapter;
+    public LogObjeto() {
+        this.adapter = new LogConsole();
     }
     
     @Override

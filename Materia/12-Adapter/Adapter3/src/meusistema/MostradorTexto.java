@@ -2,5 +2,5 @@ package meusistema;
 
 public interface MostradorTexto {
     
-    public void mostrar(String mensagem);
+    public void mostrar(String mensagem) throws Exception;
 }
