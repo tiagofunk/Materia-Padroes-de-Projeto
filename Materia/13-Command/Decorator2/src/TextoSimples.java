@@ -14,7 +14,7 @@ public class TextoSimples implements Texto {
 	
 	@Override
 	public String toString() {
-		return getTexto();
+            return getTexto();
 	}
 
 }
