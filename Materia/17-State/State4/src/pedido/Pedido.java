@@ -5,37 +5,37 @@ public class Pedido {
     private int numero;
     private EstadoPedido estadoPedido;
 
-    public void setEstado(EstadoPedido estado) {
-        this.estadoPedido = estado;
-    }
-
     public Pedido(int numero) {
         this.numero = numero;
         estadoPedido = new PedidoRegistrado(this);
     }
-
+    
+    public void setEstado(EstadoPedido estado) {
+        this.estadoPedido = estado;
+    }
+    
     public void analisar() throws Exception {
-        estadoPedido = new PedidoEmAnalise(this);
+        estadoPedido.analisar();
     }
 
     public void suspender() throws Exception {
-        estadoPedido = new PedidoPendente(this);
+        estadoPedido.suspender();
     }
 
     public void retomar() throws Exception {
-        estadoPedido = new PedidoEmAnalise(this);
+        estadoPedido.retomar();
     }
 
     public void cancelar() throws Exception {
-        estadoPedido = new PedidoCancelado(this);
+        estadoPedido.cancelar();
     }
 
     public void aprovar() throws Exception {
-        estadoPedido = new PedidoAprovado(this);
+        estadoPedido.aprovar();
     }
 
     public void atender() throws Exception {
-        estadoPedido = new PedidoAtendido(this);
+        estadoPedido.atender();
     }
 
     public int getNumero() {

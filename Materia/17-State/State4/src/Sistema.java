@@ -5,40 +5,40 @@ public class Sistema {
 
     public static void main(String[] args) throws Exception {
 
-        Pedido pedido1 = new Pedido(1);
+        Pedido pedido = new Pedido(1);
         try {
-            pedido1.aprovar();
+            pedido.aprovar();
         } catch (Exception ex) {
             System.out.println("Erro: " + ex.getMessage());
         }
-        pedido1.analisar();
+        pedido.analisar();
 
-        pedido1.suspender();
-        pedido1.retomar();
+        pedido.suspender();
+        pedido.retomar();
 
-        pedido1.aprovar();
-        pedido1.cancelar();
+        pedido.aprovar();
+        pedido.cancelar();
 
         try {
-            pedido1.atender();
-        } catch (Exception ex) {
-            System.out.println("Erro: " + ex.getMessage());
-        }
-
-        pedido1 = new Pedido(2);
-        pedido1.analisar();
-        pedido1.aprovar();
-        pedido1.cancelar();
-        try {
-            pedido1.atender();
+            pedido.atender();
         } catch (Exception ex) {
             System.out.println("Erro: " + ex.getMessage());
         }
 
-        pedido1 = new Pedido(3);
-        pedido1.analisar();
-        pedido1.aprovar();
-        pedido1.atender();
+        pedido = new Pedido(2);
+        pedido.analisar();
+        pedido.aprovar();
+        pedido.cancelar();
+        try {
+            pedido.atender();
+        } catch (Exception ex) {
+            System.out.println("Erro: " + ex.getMessage());
+        }
+
+        pedido = new Pedido(3);
+        pedido.analisar();
+        pedido.aprovar();
+        pedido.atender();
 
     }
 
