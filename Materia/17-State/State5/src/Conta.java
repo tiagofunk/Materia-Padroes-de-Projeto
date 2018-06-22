@@ -1,36 +1,37 @@
 
+import java.util.Random;
+
+
 public class Conta {
-    
-    private EstadoConta estado;
     
     private int numero;
     private int senha;
+    private double valor;
+    
+    private static int contadorNumero = 1;
+    private static int contadorSenha = 1;
 
-    public Conta(int numero, int senha) {
-        this.numero = numero;
-        this.senha = senha;
+    public Conta() {
+        numero = contadorNumero++;
+        senha = contadorSenha++;
+        valor = new Random().nextDouble()*100;
     }
 
     public int getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
     public int getSenha() {
         return senha;
     }
 
-    public void setSenha(int senha) {
-        this.senha = senha;
+    public double getValor() {
+        return valor;
     }
 
     @Override
     public String toString() {
-        return "Conta{" + "numero=" + numero + ", senha=" + senha + '}';
+        return "Conta{" + "numero=" + numero + ", senha=" + senha + ", valor=" + valor + '}';
     }
-    
     
 }
