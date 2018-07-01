@@ -25,10 +25,11 @@ public class Postagem extends ComponentSite{
     @Override
     public void imprimir() {
         String s = super.toString();
+        System.out.print(s + "*");
         for(ComponentSite comp: listaComponentes){
             comp.imprimir();
         }
-        System.out.println(s);
+        System.out.println("");
     }
     
 }

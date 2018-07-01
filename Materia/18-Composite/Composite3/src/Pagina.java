@@ -9,7 +9,7 @@ public class Pagina extends ComponentSite{
     
     @Override
     public void imprimir() {
-        System.out.println( super.toString() + "conteudo=" + conteudo);
+        System.out.print( super.toString() + "conteudo=" + conteudo + "/");
     }
     
 }
