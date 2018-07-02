@@ -1,7 +1,4 @@
 
-import pacote.Arma;
-
-
 public class MiraTelescopica extends ArmaDecorator {
 
 	public MiraTelescopica(Arma arma) {

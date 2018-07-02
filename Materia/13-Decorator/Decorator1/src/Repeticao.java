@@ -1,7 +1,4 @@
 
-import pacote.Arma;
-
-
 public class Repeticao extends ArmaDecorator {
 
 	public Repeticao(Arma arma) {
